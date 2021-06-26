@@ -45,7 +45,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         b1 = findViewById(R.id.button);
-        b2=findViewById(R.id.button2);
+        b2 = findViewById(R.id.button2);
         myDB = new DatabaseHandler( this);
         final MediaPlayer mp = MediaPlayer.create(getApplicationContext(),R.raw.sos);
         locationManager =(LocationManager) getSystemService(LOCATION_SERVICE);
@@ -66,9 +66,12 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 mp.start();
+                Intent i = new Intent(getApplicationContext(),MapsActivity.class);
+                startActivity(i);
                 Toast.makeText(getApplicationContext(),"Panic Button Start",Toast.LENGTH_SHORT).show();
+                return false;
             }
-        });
+        } );
     }
     private void loadData(){
         ArrayList<String> thelist = new ArrayList<>( );

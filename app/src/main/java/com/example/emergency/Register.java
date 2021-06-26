@@ -35,6 +35,7 @@ public class Register extends AppCompatActivity {
         b2=findViewById(R.id.delete);
         b3=findViewById(R.id.view);
         myDB=new DatabaseHandler(this);
+
         b1.setOnClickListener(new View.OnClickListener(){
             @Override
                     public void onClick(View v){
@@ -44,7 +45,7 @@ public class Register extends AppCompatActivity {
                 e1.setText("");
             }
 
-        }
+        } );
 
         b2.setOnClickListener(new View.OnClickListener() {
 
@@ -58,7 +59,7 @@ public class Register extends AppCompatActivity {
 
 
                                   }
-                              }
+                              } );
 
 
 
@@ -69,7 +70,7 @@ public class Register extends AppCompatActivity {
                 loadData();
 
             }
-        })
+        } );
     }
     private void loadData(){
         ArrayList<String> theList = new ArrayList<>();
@@ -89,7 +90,7 @@ public class Register extends AppCompatActivity {
         return sqlitedb.delete(DatabaseHandler.TABLE_NAME,DatabaseHandler.COL2 + "=?", new String[]{x})>0;
 
     }
-    private void addData(String sr){
+    private void addData(String newEntry){
         boolean insertData = myDB.addDATA( newEntry );
         if(insertData==true){
             Toast.makeText(Register.this,"Data Added",Toast.LENGTH_SHORT).show();

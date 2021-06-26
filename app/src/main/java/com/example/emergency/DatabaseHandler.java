@@ -15,14 +15,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTable = "CREATE TABLE"+TABLE_NAME+"(ID INTEGER PRIMARY KEY AUTOINCREMENT,"+"ITEM1 TEXT)";
+        String createTable = "CREATE TABLE "+TABLE_NAME+"(ID INTEGER PRIMARY KEY AUTOINCREMENT,"+"ITEM1 TEXT)";
         db.execSQL(createTable);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String a="DROP TABLE IF EXISTS" +TABLE_NAME;
+        String a="DROP TABLE IF Exists " +TABLE_NAME;
         db.execSQL(a);
         onCreate(db);
 
@@ -44,7 +44,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
     public Cursor getListContents(){
         SQLiteDatabase db= this.getWritableDatabase();
-        Cursor data = db.rawQuery("SELECT*FROM"+TABLE_NAME,null);
+        Cursor data = db.rawQuery("SELECT*FROM "+TABLE_NAME,null);
         return data;
     }
 }

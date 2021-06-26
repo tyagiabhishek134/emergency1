@@ -8,6 +8,7 @@
     tools:context=".Register">
 
     <EditText
+        android:id="@+id/phone"
         android:layout_width="495dp"
         android:layout_height="98dp"
         android:layout_gravity="center"
